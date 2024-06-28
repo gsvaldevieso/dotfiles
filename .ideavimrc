@@ -1,0 +1,69 @@
+let mapleader=" "
+
+set showcmd
+set showmode
+set clipboard+=unnamed
+set clipboard+=ideaput
+set NERDTree
+set relativenumber
+set number
+set visualbell
+set noerrorbells
+set scrolloff=5
+set incsearch
+set hlsearch
+set ideajoin
+set commentary
+set easymotion
+set ignorecase
+set highlightedyank
+
+let mapleader = " "
+
+nnoremap \e :e ~/.ideavimrc<CR>
+nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
+nnoremap <TAB> :action PreviousTab<CR>
+nnoremap <s-TAB> :action NextTab<CR>
+
+nmap gb :action Back<CR>
+nmap gf :action Forward<CR>
+nmap gd :action GotoDeclaration<CR>
+
+nnoremap <leader>u :action ShowUsages<CR>
+nnoremap <leader>= :action ReformatCode<CR>
+nnoremap <leader>o :action OptimizeImports<CR>
+nnoremap <leader>c :action CommentByLineComment<CR>
+nnoremap <leader>a :action ShowIntentionActions<CR>
+nnoremap <c-r> :action RecentFiles<CR>
+
+nnoremap ,r :action ContextRun<CR>
+nnoremap ,c :action RunClass<CR>
+nnoremap ,f :action ChooseRunConfiguration<CR>
+nnoremap ,t :action ActivateRunToolWindow<CR>
+nnoremap ,u :action Rerun<CR>
+nnoremap ,f :action RerunFailedTests<CR>
+nnoremap ,b :action ToggleLineBreakpoint<CR>
+nnoremap ,d :action ContextDebug<CR>
+nnoremap ,n :action ActivateDebugToolWindow<CR>
+
+map <leader>as <action>(SearchEverywhere)
+map <leader>ff <action>(GotoFile)
+map <leader>q <action>(CloseContent)
+map <leader>x :NERDTreeToggle<CR>
+map <leader>rn <Action>(RenameElement)
+map <leader>rm <Action>(ExtractMethod)
+map <leader>rv <Action>(IntroduceVariable)
+map <leader>rf <Action>(IntroduceField)
+map <leader>rs <Action>(ChangeSignature)
+map <leader>rr <Action>(Refactorings.QuickListPopupAction)
+
+imap jj <Esc>
+echo -e '
+
+map <leader>f <Action>(AceAction)
+map <leader>F <Action>(AceTargetAction)
+map <leader>g <Action>(AceLineAction)
+
+Plug 'machakann/vim-highlightedyank'
+Plug 'tpope/vim-commentary'
+Plug 'easymotion/vim-easymotion'
